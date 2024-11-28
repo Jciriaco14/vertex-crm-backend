@@ -8,6 +8,9 @@ const app = express();
 // Middleware
 app.use(cors());
 app.use(express.json());
+app.get('/', (req, res) => {
+    res.send('Server is running');
+  });
 
 // Connect to MongoDB
 mongoose.connect(process.env.MONGODB_URI)
